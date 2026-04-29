@@ -43,6 +43,8 @@ export default function NewPostPage() {
       setError('제목과 본문을 모두 입력해주세요.');
       return;
     }
+    if (submitting) return;
+
     setSubmitting(true);
     setError('');
     try {
@@ -54,7 +56,13 @@ export default function NewPostPage() {
       const res = await createPost(fd);
       navigate(`/post/${res.data._id}`);
     } catch (err) {
-      setError(err.response?.data?.message || '게시글 등록 중 오류가 발생했습니다.');
+      const isTimeout = err.code === 'ECONNABORTED';
+      const message =
+        err.response?.data?.message ||
+        (isTimeout
+          ? '등록 요청 시간이 초과되었습니다. 잠시 후 다시 시도해주세요.'
+          : '게시글 등록 중 오류가 발생했습니다. 서버가 켜져 있는지 확인해주세요.');
+      setError(message);
     } finally {
       setSubmitting(false);
     }

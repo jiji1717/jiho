@@ -47,7 +47,12 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST /api/posts — 게시글 작성 (이미지 업로드 포함)
-router.post('/', upload.array('images', 10), async (req, res) => {
+router.post('/', (req, res, next) => {
+  upload.array('images', 10)(req, res, (err) => {
+    if (!err) return next();
+    return res.status(400).json({ message: err.message || '이미지 업로드 중 오류가 발생했습니다.' });
+  });
+}, async (req, res) => {
   try {
     const { title, content, author } = req.body;
     if (!title || !content) {

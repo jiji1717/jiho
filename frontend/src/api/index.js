@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+const API_ORIGIN = process.env.REACT_APP_API_URL?.replace(/\/$/, '') || '';
+
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL + '/api',
+  baseURL: `${API_ORIGIN}/api`,
+  timeout: 15000,
 });
 
 // Posts
