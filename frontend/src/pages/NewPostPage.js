@@ -64,9 +64,7 @@ export default function NewPostPage() {
     <div className="new-post fade-up">
       <div className="new-post-header">
         <button className="back-btn" onClick={() => navigate(-1)}>← 뒤로</button>
-        <h1 className="new-post-title">
-          <span className="title-accent">◆</span> 글쓰기
-        </h1>
+        <h1 className="new-post-title">글쓰기</h1>
       </div>
 
       <form className="post-form" onSubmit={handleSubmit}>

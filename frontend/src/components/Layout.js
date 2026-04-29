@@ -11,7 +11,6 @@ export default function Layout() {
       <header className="header">
         <div className="header-inner">
           <Link to="/" className="logo">
-            <span className="logo-symbol">◆</span>
             <span className="logo-text">풍동고 학생 자유 커뮤니티</span>
           </Link>
           <nav className="header-nav">

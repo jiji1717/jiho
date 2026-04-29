@@ -96,7 +96,7 @@ export default function PostDetailPage() {
     navigate('/');
   };
 
-  if (postLoading) return <div className="spinner" />;
+  if (postLoading) return null;
   if (!post) return null;
 
   return (
@@ -212,7 +212,7 @@ export default function PostDetailPage() {
 
         {/* Comment list */}
         {commentLoading ? (
-          <div className="spinner" />
+          null
         ) : comments.length === 0 ? (
           <p className="no-comments">아직 댓글이 없습니다. 첫 댓글을 남겨보세요!</p>
         ) : (

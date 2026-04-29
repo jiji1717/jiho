@@ -58,9 +58,7 @@ export default function HomePage() {
     <div className="home fade-up">
       {/* Hero */}
       <div className="home-hero">
-        <h1 className="home-title">
-          <span className="title-accent">◆</span> 게시판
-        </h1>
+        <h1 className="home-title">게시판</h1>
         <p className="home-subtitle">총 {total.toLocaleString()}개의 게시글</p>
       </div>
 
@@ -91,7 +89,7 @@ export default function HomePage() {
 
       {/* List */}
       {loading ? (
-        <div className="spinner" />
+        null
       ) : posts.length === 0 ? (
         <div className="empty-state">
           <p className="empty-icon">📭</p>
