@@ -27,6 +27,7 @@
 html {
   font-size: 15px;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -35,6 +36,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.7;
   min-height: 100vh;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -52,10 +54,12 @@ button {
 
 input, textarea {
   font-family: var(--font-body);
+  min-width: 0;
 }
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 ::selection {
@@ -92,4 +96,20 @@ img {
 
 .fade-up {
   animation: fadeUp 0.4s ease forwards;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    line-height: 1.65;
+  }
+
+  button,
+  input,
+  textarea {
+    font-size: 16px;
+  }
 }

@@ -9,7 +9,8 @@
   margin-bottom: 28px;
   display: inline-block;
   transition: color var(--transition);
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
+  min-height: 36px;
 }
 
 .back-btn:hover { color: var(--accent); }
@@ -28,6 +29,7 @@
   margin-bottom: 12px;
   color: var(--text-primary);
   word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .detail-meta {
@@ -83,6 +85,7 @@
   margin-bottom: 36px;
   white-space: pre-wrap;
   word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .detail-content p { margin-bottom: 0.5em; }
@@ -106,6 +109,7 @@
   font-size: 0.9rem;
   color: var(--text-primary);
   transition: all var(--transition);
+  min-height: 44px;
 }
 
 .like-btn:hover:not(:disabled) {
@@ -129,6 +133,7 @@
   border-radius: var(--radius);
   transition: all var(--transition);
   margin-left: auto;
+  min-height: 36px;
 }
 
 .delete-btn:hover {
@@ -185,6 +190,7 @@
   padding: 5px 12px;
   border-radius: var(--radius);
   transition: all var(--transition);
+  min-height: 34px;
 }
 
 .sort-tab.active {
@@ -212,6 +218,7 @@
   outline: none;
   margin-bottom: 10px;
   transition: border-color var(--transition);
+  min-height: 42px;
 }
 
 .comment-author-input::placeholder { color: var(--text-muted); }
@@ -250,6 +257,7 @@
   align-self: flex-end;
   height: 40px;
   transition: background var(--transition);
+  min-width: 76px;
 }
 
 .comment-submit:hover:not(:disabled) { background: var(--accent-hover); }
@@ -276,6 +284,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
+  gap: 10px;
 }
 
 .comment-author {
@@ -285,6 +294,8 @@
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-secondary);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .comment-right {
@@ -311,6 +322,7 @@
   color: var(--text-primary);
   white-space: pre-wrap;
   word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .no-comments {
@@ -353,8 +365,109 @@
 .lightbox-close:hover { opacity: 1; }
 
 @media (max-width: 640px) {
-  .detail-title { font-size: 1.35rem; }
-  .image-grid { grid-template-columns: 1fr; }
-  .comment-input-row { flex-direction: column; }
-  .comment-submit { height: 40px; align-self: flex-end; padding: 0 20px; }
+  .back-btn {
+    margin-bottom: 18px;
+  }
+
+  .detail-header {
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+  }
+
+  .detail-title {
+    font-size: 1.35rem;
+  }
+
+  .detail-meta {
+    gap: 6px 8px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 22px;
+  }
+
+  .post-image {
+    height: auto;
+    max-height: 70vh;
+    aspect-ratio: 4 / 3;
+  }
+
+  .detail-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  .detail-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+
+  .like-btn,
+  .delete-btn {
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .section-divider {
+    margin-bottom: 24px;
+  }
+
+  .comments-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sort-tabs {
+    width: 100%;
+  }
+
+  .sort-tab {
+    flex: 1;
+  }
+
+  .comment-form {
+    padding: 14px;
+  }
+
+  .comment-input-row {
+    flex-direction: column;
+  }
+
+  .comment-submit {
+    height: 44px;
+    width: 100%;
+    align-self: stretch;
+    padding: 0 20px;
+  }
+
+  .comment-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .comment-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .comment-delete {
+    min-height: 32px;
+    padding: 0 4px;
+  }
+
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-img {
+    max-width: 96vw;
+    max-height: 82vh;
+  }
 }
