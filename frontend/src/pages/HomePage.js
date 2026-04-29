@@ -93,7 +93,7 @@ export default function HomePage() {
       ) : posts.length === 0 ? (
         <div className="empty-state">
           <p className="empty-icon">📭</p>
-          <p>{query ? '검색 결과가 없습니다.' : '아직 게시글이 없습니다.'}</p>
+          <p>{query ? '검색 결과가 없습니다.' : '아직 게시물이 없어요. 자유롭게 글을 작성해보세요!'}</p>
           {!query && (
             <button className="btn-primary" onClick={() => navigate('/new')}>
               첫 글 작성하기

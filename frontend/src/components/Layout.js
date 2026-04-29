@@ -12,6 +12,7 @@ export default function Layout() {
         <div className="header-inner">
           <Link to="/" className="logo">
             <span className="logo-text">풍동고 학생 자유 커뮤니티</span>
+            <span className="logo-subtitle">학교생활 이야기와 소식을 자유롭게 올려보세요.</span>
           </Link>
           <nav className="header-nav">
             <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>

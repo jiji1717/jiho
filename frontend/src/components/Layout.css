@@ -18,16 +18,18 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 0 24px;
-  height: 56px;
+  min-height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .logo {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
   text-decoration: none;
   min-width: 0;
 }
@@ -37,6 +39,15 @@
   font-size: 22px;
   letter-spacing: 0;
   color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logo-subtitle {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  line-height: 1.25;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -100,7 +111,6 @@
 
 @media (max-width: 640px) {
   .header-inner {
-    height: auto;
     min-height: 56px;
     padding: 8px 16px;
     gap: 12px;
@@ -112,6 +122,10 @@
 
   .logo-text {
     font-size: 18px;
+  }
+
+  .logo-subtitle {
+    font-size: 0.72rem;
   }
 
   .header-nav {
