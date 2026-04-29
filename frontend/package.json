@@ -9,10 +9,10 @@
     "react-scripts": "5.0.1",
     "axios": "^1.5.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts --max-old-space-size=512 build"
-  },
+"scripts": {
+  "start": "react-scripts start",
+  "build": "node node_modules/react-scripts/bin/react-scripts.js build"
+},
   "proxy": "http://localhost:5000",
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
